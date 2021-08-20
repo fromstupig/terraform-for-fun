@@ -8,7 +8,7 @@
     "command": ["celery", "-A", "prism", "worker", "--loglevel=INFO", "--beat", "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler", "--statedb=celery_working.state"],
       "environment": [{
         "name": "AWS_ACCESS_KEY_ID",
-        "value": "AKIASREGXUUBLN37P5RK"
+        "value": "AKIA53STKYMXF2JWA3OV"
       },{
         "name": "AWS_SECRET_ACCESS_KEY",
         "value": "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"
@@ -20,10 +20,10 @@
         "value": "api-dev.internal.prismtechinc.com"
       },{
         "name": "CORS_ORIGIN_WHITELIST",
-        "value": "*"
+        "value": "http://*, https://*"
       },{
         "name": "CSRF_TRUSTED_ORIGINS",
-        "value": "*"
+        "value": "http://*, https://*"
       },{
         "name": "EMAIL_HOST_PASSWORD",
         "value": "1q2w3e4r!@#"
