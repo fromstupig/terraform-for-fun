@@ -139,12 +139,7 @@ variable "enable_bastion" {
 
 variable "s3_storage" {
   description = "S3 storage for media, file .etc"
-  default = "vio-storage"
-}
-
-variable "infra_state_storage" {
-  description = "S3 storage for Terraform state"
-  default = "vio-ops"
+  default = "vio-dev-storage"
 }
 
 variable "rabbitmq_user" {
