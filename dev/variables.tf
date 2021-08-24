@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "The AWS region things are created in"
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "ecs_task_execution_role_name" {
@@ -25,12 +25,12 @@ variable "az_count" {
 
 variable "api_image" {
   description = "API Docker image to run in the ECS cluster"
-  default = "952583766830.dkr.ecr.us-east-2.amazonaws.com/vio/api:dev-latest"
+  default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/api:dev-latest"
 }
 
 variable "celery_image" {
   description = "API Docker image to run in the ECS cluster"
-  default = "952583766830.dkr.ecr.us-east-2.amazonaws.com/vio/celery:dev-latest"
+  default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/api:dev-latest"
 }
 
 variable "api_port" {

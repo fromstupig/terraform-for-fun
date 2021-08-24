@@ -8,10 +8,10 @@
     "command": ["celery", "-A", "prism", "worker", "--loglevel=INFO", "--beat", "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler", "--statedb=celery_working.state"],
       "environment": [{
         "name": "AWS_ACCESS_KEY_ID",
-        "value": "AKIA53STKYMXF2JWA3OV"
+        "value": "AKIAZVA2MCU3PJSJ6BH4"
       },{
         "name": "AWS_SECRET_ACCESS_KEY",
-        "value": "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"
+        "value": "ltAJwQAb1I2AxLRgFlHIznNW2/NSn8//0AkOCof3"
       },{
         "name": "AWS_STORAGE_BUCKET_NAME",
         "value": "vio-storage"

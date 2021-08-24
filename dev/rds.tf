@@ -4,7 +4,7 @@ module "db" {
 
   identifier        = var.db_identifier
   engine            = "postgres"
-  engine_version    = "12.4"
+  engine_version    = "12.5"
   instance_class    = "db.t2.micro"
   allocated_storage = 20
   storage_encrypted = false
@@ -35,5 +35,7 @@ module "db" {
 
   final_snapshot_identifier = var.db_identifier
 
-  deletion_protection = false
+  deletion_protection = true
+  allow_major_version_upgrade = false
+  auto_minor_version_upgrade = false
 }

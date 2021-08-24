@@ -21,7 +21,7 @@ resource "aws_iam_role" "ecs_task_execution_role" {
 # ECS task execution role policy attachment
 resource "aws_iam_role_policy_attachment" "ecs_task_execution_role" {
   role       = aws_iam_role.ecs_task_execution_role.name
-  policy_arn = "arn:aws:iam::952583766830:policy/ecsServicesAccessPolicy"
+  policy_arn = "arn:aws:iam::663627765046:policy/ecsServicesAccessPolicy"
 }
 
 data "aws_iam_policy_document" "ecs_services_access_role" {
@@ -50,6 +50,6 @@ resource "aws_iam_role_policy_attachment" "ecs_sercet_access_role" {
 
 resource "aws_iam_role_policy_attachment" "ecs_services_access_role" {
   role       = aws_iam_role.ecs_services_access_role.name
-  policy_arn = "arn:aws:iam::952583766830:policy/ecsServicesAccessPolicy"
+  policy_arn = "arn:aws:iam::663627765046:policy/ecsServicesAccessPolicy"
 }
 
