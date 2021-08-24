@@ -4,7 +4,7 @@ resource "aws_route53_zone" "main" {
 
 resource "aws_route53_record" "api" {
   zone_id = aws_route53_zone.main.zone_id
-  name    = "api-dev.internal.${var.domain}"
+  name    = "api-dev.${var.domain}"
   type    = "A"
 
   alias {

@@ -17,7 +17,7 @@
         "value": "vio-storage"
       },{
         "name": "BASE_HOST",
-        "value": "api-dev.internal.prismtechinc.com"
+        "value": "api-dev.prismtechinc.com"
       },{
         "name": "CORS_ORIGIN_WHITELIST",
         "value": "http://*, https://*"

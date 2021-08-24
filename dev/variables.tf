@@ -85,7 +85,7 @@ variable "domain" {
 
 variable "web_domain" {
   description = "Domain host of web"
-  default = "dev.internal.prismtechinc.com"
+  default = "dev.prismtechinc.com"
 }
 
 variable "db_port" {
