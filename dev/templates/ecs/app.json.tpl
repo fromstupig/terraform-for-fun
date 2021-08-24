@@ -56,7 +56,7 @@
     },
         {
         "name": "POSTGRES_HOST",
-        "value": "vio-db-dev.cz8x9riw8x5m.us-east-2.rds.amazonaws.com"
+        "value": "vio-db-dev.cwo3vdrnog4b.us-east-1.rds.amazonaws.com"
         },{
         "name": "POSTGRES_PASSWORD",
         "value": "3AAqBH2whM6TjAFr"
