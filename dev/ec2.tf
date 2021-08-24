@@ -11,7 +11,7 @@ resource "aws_key_pair" "vio_dev_key" {
 resource "aws_instance" "bastion_host" {
   count = var.enable_bastion ? 1 : 0
 
-  ami                         = "ami-00399ec92321828f5"
+  ami                         = "ami-09e67e426f25ce0d7"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   ebs_optimized               = false
