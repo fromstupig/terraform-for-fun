@@ -14,7 +14,7 @@
         "value": "ltAJwQAb1I2AxLRgFlHIznNW2/NSn8//0AkOCof3"
       },{
         "name": "AWS_STORAGE_BUCKET_NAME",
-        "value": "vio-storage"
+        "value": "vio-dev-storage"
       },{
         "name": "BASE_HOST",
         "value": "api-dev.prismtechinc.com"
