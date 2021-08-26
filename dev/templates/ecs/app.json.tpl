@@ -31,7 +31,7 @@
         "value": "testappprism@gmail.com"
       },{
         "name": "ENV",
-        "value": "DEV"
+        "value": "PRODUCTION"
       },{
         "name": "EXTRA_ALLOWED_HOSTS",
         "value": "*"

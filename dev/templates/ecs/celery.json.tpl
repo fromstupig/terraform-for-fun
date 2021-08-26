@@ -32,7 +32,7 @@
         "value": "testappprism@gmail.com"
       },{
         "name": "ENV",
-        "value": "DEV"
+        "value": "PRODUCTION"
       },{
         "name": "EXTRA_ALLOWED_HOSTS",
         "value": "*"
@@ -55,9 +55,9 @@
         "name": "POSTGRES_DB",
         "value": "vio"
     },{
-"name": "POSTGRES_USER",
-"value": "postgres"
-},
+        "name": "POSTGRES_USER",
+        "value": "postgres"
+        },
         {
         "name": "POSTGRES_HOST",
         "value": "vio-db-dev.cwo3vdrnog4b.us-east-1.rds.amazonaws.com"
@@ -120,12 +120,6 @@
                     "awslogs-region": "${aws_region}",
                     "awslogs-stream-prefix": "ecs"
                   }
-          },
-      "portMappings": [
-            {
-                    "containerPort": ${app_port},
-                    "hostPort": ${app_port}
-                  }
-          ]
+          }
     }
 ]

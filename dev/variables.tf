@@ -29,8 +29,13 @@ variable "api_image" {
 }
 
 variable "celery_image" {
-  description = "API Docker image to run in the ECS cluster"
+  description = "API Docker celery image to run in the ECS cluster"
   default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/api:dev-latest"
+}
+
+variable "dbmigration_image" {
+  description = "API Docker migration image to run in the ECS cluster"
+  default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/migrate:dev-latest"
 }
 
 variable "api_port" {
@@ -53,11 +58,6 @@ variable "api_max_containers" {
   default = 3
 }
 
-variable "celery_max_containers" {
-  description = "Maximum number of Celery containers to run"
-  default = 3
-}
-
 variable "fargate_cpu" {
   description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU unists)"
   default = "2048"
@@ -66,6 +66,21 @@ variable "fargate_cpu" {
 variable "fargate_memory" {
   description = "Fargate instance memory o provision (in MiB)"
   default = "4096"
+}
+
+variable "dbmigration_fargate_cpu" {
+  description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU unists)"
+  default = "1024"
+}
+
+variable "dbmigration_fargate_memory" {
+  description = "Fargate instance memory o provision (in MiB)"
+  default = "2048"
+}
+
+variable "dbmigration_min_containers" {
+  description = "Minimum number of Celery containers to run"
+  default = 1
 }
 
 variable "celery_fargate_cpu" {
