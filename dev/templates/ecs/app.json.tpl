@@ -19,10 +19,10 @@
         "value": "api-dev.prismtechinc.com"
       },{
         "name": "CORS_ORIGIN_WHITELIST",
-        "value": "http://*, https://*"
+        "value": "http://*, https://*, https://dev.prismtechinc.com"
       },{
         "name": "CSRF_TRUSTED_ORIGINS",
-        "value": "http://*, https://*"
+        "value": "http://*, https://*, https://dev.prismtechinc.com"
       },{
         "name": "EMAIL_HOST_PASSWORD",
         "value": "1q2w3e4r!@#"
@@ -31,7 +31,7 @@
         "value": "testappprism@gmail.com"
       },{
         "name": "ENV",
-        "value": "PRODUCTION"
+        "value": "DEV"
       },{
         "name": "EXTRA_ALLOWED_HOSTS",
         "value": "*"
