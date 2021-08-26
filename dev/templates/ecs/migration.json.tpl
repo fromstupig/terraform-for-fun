@@ -20,6 +20,9 @@
         }, {
             "name": "ENV",
             "value": "PRODUCTION"
+        }, {
+            "name": "SECRET_KEY",
+            "value": "^%c+#1wu+g(s&_2ybin4_w-r)39i5(%6)0y_d70q2vd4ip9y$%"
         }],
       "logConfiguration": {
             "logDriver": "awslogs",
