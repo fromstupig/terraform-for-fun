@@ -92,7 +92,7 @@
 "value": "sk_test_51GrmhoDWiwaOszRRobZNnjTq9zqTWtFfxKlFHhcw7ODRa6J1sMFeO5Pc73tJsnwm7BTrcvySBSPBZO5SGEGdQEUM00yaHT1yZr"
 },{
 "name": "STRIPE_WEBHOOK_SECRET",
-"value": "whsec_2YHzzTvVuPkEXNUN0p2znkiO8uRfgEBv"
+"value": "whsec_3YwcNvzGwhM7sxwYgJVVtoCUoCodS3Ui"
 },{
 "name": "TWILIO_ACC_SID",
 "value": "AC5cb8e959b7ee68e35fb6573737b44032"
