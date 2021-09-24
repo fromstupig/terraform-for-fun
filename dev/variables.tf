@@ -268,4 +268,14 @@ variable "db_user" {
   description = "Main db user"
   default = "default-user"
 }
+
+variable "fe_repo_token" {
+  description = "FE repo token"
+  default = "idunknow"
+}
+
+variable "be_repo_token" {
+  description = "BE repo token"
+  default = "idunknow"
+}
 # End of sensitive vairable 
