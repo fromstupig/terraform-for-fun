@@ -95,7 +95,7 @@ module "runner" {
     // this tag used in CICD
     description = "group runner"
     locked_to_project = "false"
-    run_untagged = "false"
+    run_untagged = "true"
     maximum_timeout = "3600"
   }
 }
