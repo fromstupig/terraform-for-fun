@@ -172,6 +172,87 @@ variable "rabbitmq_port" {
   default = "5671"
 }
 
+variable "sns_name" {
+  description = "SNS main topic name"
+  default = "vio-general"
+}
+
+variable "account_id" {
+  description = "AWS owner account id"
+  default = "663627765046"
+}
+
+variable "sns_subscription_email_address_list" {
+  description = "SNS subscription email address sandbox"
+  type = list(string)
+  default = ["phong@prismtechinc.io"]
+}
+
+variable "sns_subscription_protocol" {
+  default = "email"
+  description = "SNS subscription protocal"
+}
+
+variable "default_sender_id" {
+  description = "A custom ID, such as your business brand, displayed as the sender on the receiving device. Support for sender IDs varies by country."
+  type        = string
+  default     = "vio"
+}
+
+variable "default_sms_type" {
+  description = "Promotional messages are noncritical, such as marketing messages. Transactional messages are delivered with higher reliability to support customer transactions, such as one-time passcodes."
+  type        = string
+  default     = "Promotional"
+}
+
+variable "delivery_status_iam_role_arn" {
+  description = "The IAM role that allows Amazon SNS to write logs for SMS deliveries in CloudWatch Logs."
+  type        = string
+  default     = ""
+}
+
+variable "delivery_status_success_sampling_rate" {
+  description = "Default percentage of success to sample."
+  type        = number
+  default     = 0
+}
+
+variable "monthly_spend_limit" {
+  description = "The maximum amount to spend on SMS messages each month. If you send a message that exceeds your limit, Amazon SNS stops sending messages within minutes."
+  type        = number
+  default     = 1
+}
+
+variable "policy_name" {
+  description = "Name of policy to publish to Group SMS topic."
+  type        = string
+  default     = "group-sms-publish"
+}
+
+variable "policy_path" {
+  description = "Path of policy to publish to Group SMS topic"
+  type        = string
+  default     = "/"
+}
+
+variable "role_name" {
+  description = "The IAM role that allows Amazon SNS to write logs for SMS deliveries in CloudWatch Logs."
+  type        = string
+  default     = "SNSSuccessFeedback"
+}
+
+variable "phone_subscriptions" {
+  description = "List of telephone numbers to subscribe to SNS."
+  type        = list(string)
+  default     = ["+84346639858"]
+}
+
+variable "usage_report_s3_bucket" {
+  description = "The Amazon S3 bucket to receive daily SMS usage reports. The bucket policy must grant write access to Amazon SNS."
+  type        = string
+  default = "vio-dev-sms-usage-report"
+}
+
 # Sensitive variable 
 variable "ec2_public_key" {
   description = "AWS EC2 public key which is used for ssh access"
