@@ -5,17 +5,17 @@ variable "aws_region" {
 
 variable "ecs_task_execution_role_name" {
   description = "ECS task execution role name"
-  default = "vioECSTaskExecutionRole"
+  default = "vioECSTaskExecutionRoleStage"
 }
 
 variable "ecs_services_access_role_name" {
   description = "ECS services access role name"
-  default = "vioECSServicesAccessRole"
+  default = "vioECSServicesAccessRoleStage"
 }
 
 variable "ecs_auto_scale_role_name" {
   description = "ECS auto scale role name"
-  default = "vioECSAutoScaleRole"
+  default = "vioECSAutoScaleRoleStage"
 }
 
 variable "az_count" {
@@ -100,7 +100,7 @@ variable "domain" {
 
 variable "web_domain" {
   description = "Domain host of web"
-  default = "dev.prismtechinc.com"
+  default = "stage.prismtechinc.com"
 }
 
 variable "db_port" {
@@ -120,7 +120,7 @@ variable num_cache_nodes {
 
 variable "db_identifier" {
   description = "DB indentifier"
-  default = "vio-db-dev"
+  default = "vio-db-stage"
 }
 
 variable "db_name" {
@@ -130,7 +130,7 @@ variable "db_name" {
 
 variable "env_name" {
   description = "Environment name"
-  default = "Development"
+  default = "Staging"
 }
 
 variable "s3_env_bucket" {
@@ -144,7 +144,7 @@ variable "health_check_path" {
 
 variable "ec2_key_name" {
   description = "AWS EC2 key pair name which is used for ssh access"
-  default = "vio-development-ssh"
+  default = "vio-stage-ssh"
 }
 
 variable "enable_bastion" {
@@ -154,7 +154,7 @@ variable "enable_bastion" {
 
 variable "s3_storage" {
   description = "S3 storage for media, file .etc"
-  default = "vio-dev-storage"
+  default = "vio-stage-storage"
 }
 
 variable "rabbitmq_user" {
@@ -250,7 +250,7 @@ variable "phone_subscriptions" {
 variable "usage_report_s3_bucket" {
   description = "The Amazon S3 bucket to receive daily SMS usage reports. The bucket policy must grant write access to Amazon SNS."
   type        = string
-  default = "vio-dev-sms-usage-report"
+  default = "vio-stage-sms-usage-report"
 }
 
 # Sensitive variable 
@@ -267,5 +267,15 @@ variable "db_password" {
 variable "db_user" {
   description = "Main db user"
   default = "default-user"
+}
+
+variable "route53_zone_id" {
+  description = "Existing route53 Zone id"
+  default = "you-never-know"
+}
+
+variable "cert_arn" {
+  description = "Existing cert arn"
+  default = "you-never-know"
 }
 # End of sensitive vairable
