@@ -3,6 +3,24 @@ resource "aws_key_pair" "vio_runner_key" {
   public_key = var.ec2_public_key
 }
 
+locals {
+  userdata_post_install = <<-POST
+  if ! docker ps --format '{{.Names}}' | grep -w gitlab-runner-docker-cleanup &> /dev/null; then
+      docker run -d \
+          -e LOW_FREE_SPACE=40G \
+          -e EXPECTED_FREE_SPACE=50G \
+          -e LOW_FREE_FILES_COUNT=1048576 \
+          -e EXPECTED_FREE_FILES_COUNT=2097152 \
+          -e DEFAULT_TTL=10m \
+          -e USE_DF=1 \
+          --restart always \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          --name=gitlab-runner-docker-cleanup \
+          quay.io/gitlab/gitlab-runner-docker-cleanup &
+  fi
+  POST
+}
+
 module "cache" {
   source = "npalm/gitlab-runner/aws//modules/cache"
   environment = "cache"
@@ -65,4 +83,7 @@ module "runner" {
     policy = module.cache.policy_arn
     bucket = module.cache.bucket
   }
+
+  userdata_post_install = local.userdata_post_install
 }
+
