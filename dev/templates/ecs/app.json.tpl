@@ -40,7 +40,7 @@
         "value": "AAAAuGO847I:APA91bEdG38Ke58f7XLAVXmXV0AIth8gQrSwW-vDCDOHdb4F9QN_zqM0eW9ZZvhYQFgBGAqsBQMWgIo2RhOZEDrcJ-D9ozp8NGiy-mVnFnSltXEGjAwlUhkn3BRYdNU-ZV9Ubw9jLt5-"
       },{
         "name": "FIREBASE_DB_URL",
-        "value": "https://prismtech-inc-ios-release.firebaseio.com/'"
+        "value": "https://prismtech-inc-ios-release.firebaseio.com/"
       },{
         "name": "GOOGLE_DOMAIN_VERIFICATION_CODE",
         "value": "b55ee064e65212c7"

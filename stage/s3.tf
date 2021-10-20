@@ -52,7 +52,6 @@ resource "aws_s3_bucket" "storage" {
     expose_headers  = [""]
   }
 
-
   tags = {
     Environment = var.env_name
   }

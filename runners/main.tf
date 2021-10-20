@@ -67,6 +67,7 @@ module "runner" {
       options = "rw,noexec"
     }]
   ssh_key_pair = aws_key_pair.vio_runner_key.key_name
+  runners_root_size = 30
   gitlab_runner_security_group_ids = [
     aws_security_group.runner.id]
   gitlab_runner_registration_config = {
