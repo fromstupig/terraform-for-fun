@@ -24,3 +24,12 @@ resource "aws_ecr_repository" "migration" {
     scan_on_push = true
   }
 }
+
+resource "aws_ecr_repository" "analytics" {
+  name = "vio/analytics"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
