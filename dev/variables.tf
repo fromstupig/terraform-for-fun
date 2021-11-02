@@ -48,6 +48,11 @@ variable "api_port" {
   default = "8000"
 }
 
+variable "analytics_port" {
+  description = "Port exposed by the api Docker image to redirect traffic to"
+  default = "8000"
+}
+
 variable "api_min_containers" {
   description = "Minimum number of API containers to run"
   default = 1

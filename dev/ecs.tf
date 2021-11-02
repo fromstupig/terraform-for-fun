@@ -148,6 +148,7 @@ data "template_file" "analytics" {
   vars = {
     app_name = "vio-analytics"
     app_image = var.analytics_image
+    app_port = var.analytics_port
     fargate_cpu = var.analytics_fargate_cpu
     fargate_memory = var.analytics_fargate_memory
     aws_region = var.aws_region
