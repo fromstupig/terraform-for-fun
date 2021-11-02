@@ -143,7 +143,7 @@ resource "aws_ecs_service" "migration" {
 }
 
 data "template_file" "analytics" {
-  template = file("./templates/ecs/anlytics.json.tpl")
+  template = file("./templates/ecs/analytics.json.tpl")
 
   vars = {
     app_name = "vio-analytics"
