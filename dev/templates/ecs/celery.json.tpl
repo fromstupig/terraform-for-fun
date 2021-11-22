@@ -174,6 +174,10 @@
             {
                 "name": "EMAIL_PORT",
                 "value": "587"
+            },
+            {
+                "name": "MACHINE_ID",
+                "value": "1"
             }
         ],
         "logConfiguration": {
