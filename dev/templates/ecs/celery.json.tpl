@@ -161,7 +161,7 @@
             },
             {
                 "name": "EMAIL_HOST_PASSWORD",
-                "value": "MakeVioGreatAgain@21"
+                "value": "pdtcrpqnqfxummwh"
             },
             {
                 "name": "EMAIL_PORT",
