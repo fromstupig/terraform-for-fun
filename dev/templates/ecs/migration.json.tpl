@@ -1,45 +1,57 @@
 [
-  {
-      "name": "${app_name}",
-      "image": "${app_image}",
-      "cpu": ${fargate_cpu},
-      "memory": ${fargate_memory},
-      "networkMode": "awsvpc",
-      "environment": [{
-            "name": "POSTGRES_DB",
-            "value": "vio"
-        }, {
-            "name": "POSTGRES_HOST",
-            "value": "vio-db-dev.cwo3vdrnog4b.us-east-1.rds.amazonaws.com"
-        },{
-            "name": "POSTGRES_PASSWORD",
-            "value": "3AAqBH2whM6TjAFr"
-        },{
-            "name": "POSTGRES_USER",
-            "value": "postgres"
-        }, {
-            "name": "ENV",
-            "value": "PRODUCTION"
-        }, {
-            "name": "SECRET_KEY",
-            "value": "^%c+#1wu+g(s&_2ybin4_w-r)39i5(%6)0y_d70q2vd4ip9y$%"
-        }, {
-            "name": "FIREBASE_DB_URL",
-            "value": "https://prismtech-inc-ios-release.firebaseio.com/"
-        }, {
-            "name": "FIREBASE_ADMIN_BASE64_KEY",
-            "value": "ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAicHJpc210ZWNoLWluYy1pb3MtcmVsZWFzZSIsCiAgInByaXZhdGVfa2V5X2lkIjogImZlYmYzZjg3YzM2ZGFlOGM0YWM2NzkyYmRjYjcwNWZmYTA0ZWMzZmQiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQzcwWFpORFRhdW1Bb0pcbnpEN2w3Y3prUmY3dlNzNDhTQUJtLzdTakpmdEQ1V2J1KzFUd04vaUQwajRGZlRVcUtNbkdJdFVIMnBiaG1tcmpcbkMrbGZwRzVSbTdjbndUVXYxbUMzaDBobHVDaVJ3dTlpdkFqRmJuVU9BbkZobEUwN0JFMCtxUDQ5cVBQbXNPQVNcbmZIVzZyUjZzVUFhcHFyc0VEWWl4YWZGdWM1VE11NTQ3K1pRc0lFZFovYkx1T0wzYkNTREdMb2QycnhzY0JUaVdcbk1CTzVqcUlVTWdURkRlOGlNN2huZ0dZNG85WWx3VG1EOFlIb2RhYXRXZlVlc290QjcvbGJVbWNXeGdwSjZqN1Zcbkt6UnJlTStjLzdsbWw0RHZFZDVKRjRrZmVoYnFDbjFIVjhEd2xWaWNRbWh5WENJVlV1ZVBodmwxVUZFRllCZi9cbjdoMktoTXFOQWdNQkFBRUNnZ0VBSDFsQkhHL0Q3SVRpaWd1ZUJQMDUyWEVvY2RMajFQSjBwTHh4NzFoUDFkK1Vcbm5IZDFVQ29iY0E4M3ZHMVBZaVBRTitMSStXaGVEalphdUY1YzI5S2plam9hS2tmSW81MHQ0L3d2MUpDV0x1d2hcblRqTFI2UGc4ai9QTzdtbFZNYkJRWDFEUUxNVUdQcjlQaXk1Y2JTWG5ySDJuK3dwTThFcDlBaFhManpLNkI2alFcbkx2RVd5c3hSZ1JqR24rNlczNDdSV05uNWVWckJONDlQK1N6V1puS1V5TlpvZHNHdUxVZG5PcHAxRTl6MEJaVWhcbjl0K3p3UXZDT3YvZFlHMDdTYkpHL1RoalFBNjRYTU9LcStZTnFVamZ3TldUdHlZOVRMb1hLQkU1Zm1aS3ZRVStcbkdkaEtVMHBUQzg4ajRPVG92QkRqNDh2ZDh5YUtTWlBJVHZ5ZzMzVUEyUUtCZ1FEOXpxR1ZWdmJqS2NDeG9UaGNcbmw4SFJWQ1dQSDY4bVhpcGQ4OG03aUtKMUhGcDdvaFl5Zms5UDRCSHpydVo2eTMzWHBmQlptV2p3TUxPd1E5VTZcbkk1WG5ENGNlVnhZVVNEb0hTSTArbW1iblVEaEFta29qa1RJc2dlMzdzdkQ0T0hMSEFGb2hhZDlFQm43K21RR09cbmhESkgzZSt0Rm9IY1c0aEsrM0lQd0Z6eUpRS0JnUUM5Y09DSGRsWDVFYUJkQks1YldaKzlybmRDei9QOVVydU9cbnU1WDhSOXVrVHRnVm53WWJuMVVsZkNvVHVZNmxwb3F6czU0aTNoeTFUSXhVWUVQaHEwdU5KLzhFYk1WazZIckxcbmt5MGpmRk9qeTFwSEtTZWlaUTRsZDV0Qk1vWkY4R3lrU0wrYzRUbVFBUEJsUkdBQ1B3NVAzSkNPN3h3ZXdvVVVcblluZUJXSlZtU1FLQmdDKzdQVzRkZGI3UTZsazlqYUQwTlZJTnRpYU5lZDRJVllWbnhLZU5FYWhlbGJHc2tPb2NcbkVRUmZpbUMrb3IrekowNTMrWlNRSWtrUmo2bDFpRk12d0JBOVBsYjVYOENldUxNSDlQQXlEMm92RHZVdlR3UVRcbldWRS9laWNjeHU2WGh4WmZ2Wk9OR3B6cmI5U25wOEJLb2o0YndlaFdWRVBCdndjQzlMZDdvTDgxQW9HQkFMSDNcbjJQZHB0RnJJdEY2dWh4NUtsRWNlSCt3a2NKTUxwaWZ4RW5adkMyalFxUyttdFpZOW1VQWQ1V21pYU9BMkZSZTlcbkpsS2JWMXo3RE5vM2xZM3IzbzQ5aE5ZaldVM3pHV2ttV3NGN2l4ZlZjbnBucjFSZ20ybVhjOE5NTTlpQWhZL1FcbnlESVpaSHBrWjNLN1NYYlN4aDlBbG8yeEZEblJoRFFpVFNLMmxhUUJBb0dBWURWamZXU1RqRTF6MUs4dVJnbWZcblpuUTdOM2xrdUNUQXV5MzQzVmxaMTFTcndaUUNoSkhVa1pCamZBblN6UnRxcVVkN1YyalEvYVp1bUh4Q2FhanRcbmhQL0lnZFJLdFhkcHkrZ2ZxaUNBNGhMSE5lMTZyU0ErWXFQZUdMd1NwM1BNMFYxZkU5VVdsb1VoRUw5V3FOY3BcbmJQUDA2Mk1Hbm1SNVVPQlI1UXhHRDlNPVxuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogImZpcmViYXNlLWFkbWluc2RrLW1wc2JzQHByaXNtdGVjaC1pbmMtaW9zLXJlbGVhc2UuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJjbGllbnRfaWQiOiAiMTEyMjUyMzM1ODUwMjA3NTkzNzgyIiwKICAiYXV0aF91cmkiOiAiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLAogICJ0b2tlbl91cmkiOiAiaHR0cHM6Ly9vYXV0aDIuZ29vZ2xlYXBpcy5jb20vdG9rZW4iLAogICJhdXRoX3Byb3ZpZGVyX3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3YxL2NlcnRzIiwKICAiY2xpZW50X3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9maXJlYmFzZS1hZG1pbnNkay1tcHNicyU0MHByaXNtdGVjaC1pbmMtaW9zLXJlbGVhc2UuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iCn0K"
-        }, {
-            "name": "MACHINE_ID",
-            "value": "1"
-        }],
-      "logConfiguration": {
+    {
+        "name": "${app_name}",
+        "image": "${app_image}",
+        "cpu": ${fargate_cpu
+        },
+        "memory": ${fargate_memory
+        },
+        "networkMode": "awsvpc",
+        "environment": [
+            {
+                "name": "POSTGRES_DB",
+                "value": "vio"
+            },
+            {
+                "name": "POSTGRES_HOST",
+                "value": "vio-db-dev.cwo3vdrnog4b.us-east-1.rds.amazonaws.com"
+            },
+            {
+                "name": "POSTGRES_PASSWORD",
+                "value": "3AAqBH2whM6TjAFr"
+            },
+            {
+                "name": "POSTGRES_USER",
+                "value": "postgres"
+            },
+            {
+                "name": "ENV",
+                "value": "PRODUCTION"
+            },
+            {
+                "name": "SECRET_KEY",
+                "value": "^%c+#1wu+g(s&_2ybin4_w-r)39i5(%6)0y_d70q2vd4ip9y$%"
+            },
+            {
+                "name": "FIREBASE_DB_URL",
+                "value": "https://vio-stag-f50f0-default-rtdb.firebaseio.com/"
+            },
+            {
+                "name": "FIREBASE_ADMIN_BASE64_KEY",
+                "value": "ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAidmlvLXN0YWctZjUwZjAiLAogICJwcml2YXRlX2tleV9pZCI6ICJiM2I1M2FhMDNiN2E3NWIwZDhmNzMwNTgwNjc0ZDg5ZjU2OGM4NWJlIiwKICAicHJpdmF0ZV9rZXkiOiAiLS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRQ1VJdHE2OUtqbzJnUHcKTnpUT083K3F6dndjRlEvdlQ2TkRkNU0xRHdpUWkrcmdoNGtOcVkvdWRWZEh6OE5SRkEvbXY0NXlGc05sV3RCbQpOZWcxZTlHby96TThYaXZHZ2VONlNZakxYbkRVRlFFdndpRkRkQ0V5MXhLdDE1V1I0bW1FUjlja0pKWVhxbklZCmpOdW1Ja1lTQW52S2ltU2pVM2FmNTR1QVlEaFpJSUlYa0ZkRzE2aG1va21nMDdmTGx3VTNic0NLMmZ0S280YWYKWTJPeDU0SnJpWmRScWJHSHV6WmNEUTNhdWRHMmtoT2Jmb21qaDRScjYvVUpqdkM2aFkyMFpLOFlMcnl3NWxIbgpwZjhBb00yRmNUZXJ0ZDloVXpEMklBcS91OVNtMjZzU1RiK1l6VGQzSkp3M1haZXlnL2RVT2JwdVJmUDZYVnYxClZvckFIQUxqQWdNQkFBRUNnZ0VBQ2tzcHU5Z0liTFhKbEVXaHk3cm5KSzFoWTJvclEwdmJZbkxLcmVNdml5dk4KMUhCV203WnVvL2xQYVZRTWxITzZieVJjZDUwUlV0ZXVwNHVUYVRRRGE2VGdJSS9DcHZhYm9nRytHYk9rVDNodQpMcTFrdGxVNWdWamttV1BqcHRGKzE0eE9iTnFGKzNzQ2xxWWpGVFpJZkRQaitqMEhwVG5GZ25NS2hJOHJHelpHCkE0Zkk4US94OXhXbHdjUVM3YjlEblUyOERCOGVWbEFSZllyd1dzNjUrOUduc2ZPWkw2ejZZbzcyU2JuRHZqOHYKZXR6TVJza1FFclVSY1M0Uit2VzRQc3RXVmJaam1TdXVSZ0FMdUhnUmtVNGhIQStmQ2NHNnMrU2UrTXdPNmM2aQpFZW9KcDl3VWZleFVMaFpvek1URyt1cTBCZlYxRW9mRkFQK1EyS1BoVVFLQmdRREM0WE5FNlRJMzF4QlQ5YTdjCjJONzhIVzl4TUhFaGZQTzJMSUsyejM3cVl4VFhJZnZyQ3R3bm9WWDc4K3JQTDNnbjBLRm5xNXk5MjNrZ0lOTXIKQ1dYYmdYbWpaYUN3TDVKVis4VHNIV1JlVzd6dXRPUmFTdE02R0srVm9hK3lMQStuY2FEYmpGM0RCU1lPSFhFcgpHRGdOaHZHWVI1OC9lVkVJUDdORTNPMHEzd0tCZ1FEQ21HTXpYMGhuU0taRERXcUZuL1hvUFkrMGIwRjVtTFhJCnRva1paRzEvQ3cvdDk0RVR4RjNmcGRjUWc0ZjhIbURFTndFb2cwRFpBL1lIQ2RDZVpYbm9sZUQ1Mys5elp2S20KOFh1UkFPM1lOTm9KcC9jQ1hreHlPRzZjS2E2Y1Axa0JyNEtIaG93M2drQVlYWFhERzBha3JPdU5RaHpzQzJhRgpYQnpSTE1oc2ZRS0JnUUNYV2FTK05pWHNQRGpRSEJTc0xEb3hyMktuazZtcENuUDBYZWsrdFRPcU1UMDBQNDU0CjRyeE1ndjVXYVA5SjNXSUIrZ1FBa2NWdnBnNFNKNndZMW5tbTJvMXZtelFLNFVkVFErK1NPTm1FZHRicXhNNDgKV2JSbWdGbU5hajhicnlDUk9LeG5Ga0tUZldJcXdDN3QreWM5U2pwRHZBd3ZyYmFESTRYRXk1ZmVIUUtCZ1FDNgp1ZzJlMHhTZi8wZURXaEZZVGVsaXhBZnNaVUhYMDZERUM5dzg0SEJ0a3dqakdUZmo1dThKVjVLcWh2eHJBaDlxCnlUazBUZFpoSi9yaVFCbk9sS05KZXVDYUJiYzQ3cFZ6ZW85TzBpeG81alkvUTh5em1oY1RGM0dVS2k4aVFXdEEKUWRFb0NRVHRrdSs4TVpwNThPZDF4M1IwWlBkcHpYckFCMmFqbGF4dzVRS0JnSGtac2J3cVFKRUorSnNtV2RaSwpsMmFBdzlsbWtSSHRJOGY4VkRKK1cwNlFvYW5Ta2UyeFVTZWdnL3RCRjlGcFJFckdDQng2S1NyUzg5UnhsK3VFCnQwWmtZQW45MmpuVEhLQVhPNk5jZHlQYzVQZld5RThVRlJhQjAvN1EvaEIxNWtPV0lMbUpwSFV2azBqSnROVi8KYXQrcE0wNjl6L2dZTHRWM2k4NDVlTFhwCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0KIiwKICAiY2xpZW50X2VtYWlsIjogImZpcmViYXNlLWFkbWluc2RrLWRhN2hzQHZpby1zdGFnLWY1MGYwLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwKICAiY2xpZW50X2lkIjogIjExNDM0ODYzNTgxMjE3MjA3NTc5NCIsCiAgImF1dGhfdXJpIjogImh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi9hdXRoIiwKICAidG9rZW5fdXJpIjogImh0dHBzOi8vb2F1dGgyLmdvb2dsZWFwaXMuY29tL3Rva2VuIiwKICAiYXV0aF9wcm92aWRlcl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsCiAgImNsaWVudF94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL3JvYm90L3YxL21ldGFkYXRhL3g1MDkvZmlyZWJhc2UtYWRtaW5zZGstZGE3aHMlNDB2aW8tc3RhZy1mNTBmMC5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIKfQoK"
+            },
+            {
+                "name": "MACHINE_ID",
+                "value": "1"
+            }
+        ],
+        "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
-                    "awslogs-group": "/ecs/${app_name}",
-                    "awslogs-region": "${aws_region}",
-                    "awslogs-stream-prefix": "ecs"
-                  }
-          }
+                "awslogs-group": "/ecs/${app_name}",
+                "awslogs-region": "${aws_region}",
+                "awslogs-stream-prefix": "ecs"
+            }
+        }
     }
 ]
