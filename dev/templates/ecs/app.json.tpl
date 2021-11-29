@@ -134,7 +134,7 @@
             },
             {
                 "name": "MEMCACHED_LOCATION",
-                "value": "clustervio-dev-cached.6nfhaw.cfg.use1.cache.amazonaws.com:11211"
+                "value": "vio-dev-cached.6nfhaw.cfg.use1.cache.amazonaws.com:11211"
             },
             {
                 "name": "FIREBASE_ADMIN_BASE64_KEY",
