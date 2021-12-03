@@ -186,3 +186,50 @@ resource "aws_ecs_service" "analytics" {
     aws_iam_role_policy_attachment.ecs_task_execution_role,
     module.db]
 }
+
+
+data "template_file" "ofa" {
+  template = file("./templates/ecs/ofa.json.tpl")
+
+  vars = {
+    app_name = "vio-ofa"
+    app_image = var.ofa_image
+    app_port = var.ofa_port
+    fargate_cpu = var.ofa_fargate_cpu
+    fargate_memory = var.ofa_fargate_memory
+    aws_region = var.aws_region
+  }
+}
+
+resource "aws_ecs_task_definition" "ofa" {
+  family = "vio-ofa-task"
+  task_role_arn = aws_iam_role.ecs_services_access_role.arn
+  execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
+  network_mode = "awsvpc"
+  requires_compatibilities = [
+    "FARGATE"]
+  cpu = var.ofa_fargate_cpu
+  memory = var.ofa_fargate_memory
+  container_definitions = data.template_file.ofa.rendered
+}
+
+resource "aws_ecs_service" "ofa" {
+  name = "vio-ofa-service"
+  cluster = aws_ecs_cluster.main.id
+  task_definition = aws_ecs_task_definition.ofa.arn
+  desired_count = var.ofa_min_containers
+  launch_type = "FARGATE"
+  platform_version = "1.3.0"
+
+  network_configuration {
+    security_groups = [
+      aws_security_group.ecs_tasks.id]
+    subnets = aws_subnet.private.*.id
+  }
+
+  depends_on = [
+    aws_alb_listener.api,
+    aws_iam_role_policy_attachment.ecs_task_execution_role,
+    module.db]
+}
+
