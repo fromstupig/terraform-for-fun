@@ -43,12 +43,22 @@ variable "analytics_image" {
   default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/analytics:dev-latest"
 }
 
+variable "ofa_image" {
+  description = "API Docker analytics image to run in the ECS cluster"
+  default = "663627765046.dkr.ecr.us-east-1.amazonaws.com/vio/ofa:dev-latest"
+}
+
 variable "api_port" {
   description = "Port exposed by the api Docker image to redirect traffic to"
   default = "8000"
 }
 
 variable "analytics_port" {
+  description = "Port exposed by the api Docker image to redirect traffic to"
+  default = "8000"
+}
+
+variable "ofa_port" {
   description = "Port exposed by the api Docker image to redirect traffic to"
   default = "8000"
 }
@@ -88,6 +98,16 @@ variable "analytics_fargate_memory" {
   default = "2048"
 }
 
+variable "ofa_fargate_cpu" {
+  description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU unists)"
+  default = "1024"
+}
+
+variable "ofa_fargate_memory" {
+  description = "Fargate instance memory o provision (in MiB)"
+  default = "2048"
+}
+
 variable "dbmigration_fargate_cpu" {
   description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU unists)"
   default = "1024"
@@ -105,6 +125,11 @@ variable "dbmigration_min_containers" {
 
 variable "analytics_min_containers" {
   description = "Minimum number of Celery containers to run"
+  default = 1
+}
+
+variable "ofa_min_containers" {
+  description = "Minimum number of ofa containers to run"
   default = 1
 }
 
