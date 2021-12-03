@@ -57,7 +57,7 @@
             {
                 "name": "NATS_HOST",
                 "value": "localhost"
-            },
+            }
         ],
         "logConfiguration": {
             "logDriver": "awslogs",
