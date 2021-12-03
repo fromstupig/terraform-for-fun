@@ -3,6 +3,16 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
+variable "aws_access_key" {
+  description = "The AWS access key"
+  default = "you-never-know"
+}
+
+variable "aws_secret_key" {
+  description = "The AWS secret key"
+  default = "you-never-know"
+}
+
 variable "ecs_task_execution_role_name" {
   description = "ECS task execution role name"
   default = "vioECSTaskExecutionRole"
