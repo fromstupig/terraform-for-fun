@@ -42,3 +42,19 @@ resource "aws_cloudwatch_log_stream" "dbmigration_log_stream" {
   name = "dbmigration-log-stream"
   log_group_name = aws_cloudwatch_log_group.dbmigration_log_group.name
 }
+
+
+resource "aws_cloudwatch_log_group" "ofa_log_group" {
+  name = "/ecs/vio-ofa"
+  retention_in_days = 30
+
+  tags = {
+    Name = "ofa-log-group"
+    Environment = var.env_name
+  }
+}
+
+resource "aws_cloudwatch_log_stream" "ofa_log_stream" {
+  name = "api-ofa-log-stream"
+  log_group_name = aws_cloudwatch_log_group.ofa_log_group.name
+}
