@@ -3,9 +3,14 @@ import boto3 as boto3
 
 
 def run(env='dev'):
+    cluster = 'vio-cluster'
+
     if env not in ['dev', 'stage', 'prod']:
         print('env is not valid')
         return
+
+    if env == 'stage':
+        cluster = 'vio-stage-cluster'
 
     client = boto3.client('ec2')
     security_groups = client.describe_security_groups(
@@ -60,7 +65,5 @@ def run(env='dev'):
 
     print(resp)
 
-
-cluster = 'vio-cluster'
 arg = sys.argv[1] or 'dev'
 run(arg)

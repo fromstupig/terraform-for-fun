@@ -1,5 +1,9 @@
+resource "aws_route53_zone" "main" {
+  name = var.domain
+}
+
 resource "aws_route53_record" "api" {
-  zone_id = var.route53_zone_id
+  zone_id = aws_route53_zone.main.zone_id
   name    = "api-stage.${var.domain}"
   type    = "A"
 
@@ -12,7 +16,7 @@ resource "aws_route53_record" "api" {
 
 
 resource "aws_route53_record" "web" {
-  zone_id = var.route53_zone_id
+  zone_id = aws_route53_zone.main.zone_id
   name    = var.web_domain
   type    = "A"
 
