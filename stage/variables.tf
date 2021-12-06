@@ -269,13 +269,4 @@ variable "db_user" {
   default = "default-user"
 }
 
-variable "route53_zone_id" {
-  description = "Existing route53 Zone id"
-  default = "you-never-know"
-}
-
-variable "cert_arn" {
-  description = "Existing cert arn"
-  default = "you-never-know"
-}
 # End of sensitive vairable

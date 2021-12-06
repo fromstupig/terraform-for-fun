@@ -121,23 +121,3 @@ resource "aws_ecs_task_definition" "migration" {
   memory = var.dbmigration_fargate_memory
   container_definitions = data.template_file.migration.rendered
 }
-
-resource "aws_ecs_service" "migration" {
-  name = "vio-dbmigration-service"
-  cluster = aws_ecs_cluster.main.id
-  task_definition = aws_ecs_task_definition.migration.arn
-  desired_count = var.dbmigration_min_containers
-  launch_type = "FARGATE"
-  platform_version = "1.3.0"
-
-  network_configuration {
-    security_groups = [
-      aws_security_group.ecs_tasks.id]
-    subnets = aws_subnet.private.*.id
-  }
-
-  depends_on = [
-    aws_alb_listener.api,
-    aws_iam_role_policy_attachment.ecs_task_execution_role,
-    module.db]
-}
