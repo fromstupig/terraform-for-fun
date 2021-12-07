@@ -18,7 +18,7 @@
             },
             {
                 "name": "POSTGRES_PASSWORD",
-                "value": "3AAqBH2whM6TjAF"
+                "value": "3AAqBH2whM6TjAFr"
             },
             {
                 "name": "POSTGRES_USER",
