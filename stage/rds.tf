@@ -35,7 +35,7 @@ module "db" {
 
   final_snapshot_identifier = var.db_identifier
 
-  deletion_protection = true
+  deletion_protection = false
   allow_major_version_upgrade = false
   auto_minor_version_upgrade = false
 }
